@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menú Responsive</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <!--este lick se usa en el navegador para un truco con la checkbox y el label-->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- En esta parte comienzo a hacer la barra de navegacion la cual va a estar presente en todos los HTML, en este caso no use la etiqueta header ya que me guie por unos cuantos videos para hacer esta parte el que mas me gusto (por el que me guie) no usaba la etiqueta header-->
+    <nav>
+      <!-- creo una checbox para usarla en el resposive, robando la idea que vi en un video de YouTube-->
+      <input type="checkbox" id="check" />
+
+      <label for="check" class="check-label">
+        <i class="fas fa-bars"></i>
+      </label>
+
+      <a href="index.html" class="enlace">
+        <img src="../imgenes/imagenes2.jpg" alt="" class="logo" />
+      </a>
+
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Iniciar_Secion.html">Iniciar Sesión</a></li>
+        <li><a href="Creadores.html">Creadores</a></li>
+        <li><a href="Softwares.html">Softwares</a></li>
+        <li><a href="Contactanos.html">Contactanos</a></li>
+      </ul>
+    </nav>
+    <br />
+    <div class="separador_Secundario"></div>
+    <!-- Aca termina la barra de navegacion-->
+    <div class="body-form">
+      <form>
+        <h3 class="h3-form">Bienvenido</h3>
+        <span class="line"></span>
+        <p class="Coloca-email">coloca tu email</p>
+
+        <div class="div-formulario">
+          <label class="label-form" for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="email"
+            id="email"
+            class="input-form"
+          />
+
+          <label class="label-form" for="Clave">Clave</label>
+          <input
+            class="input-form"
+            type="password"
+            name="password"
+            placeholder="Clave"
+            id="Clave"
+          />
+
+          <div class="form-txt">
+            <a href="#">Politicas de privacidad</a>
+            <a href="#">Terminos y condiciones</a>
+          </div>
+          <input class="btn" type="submit" value="Enviar" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

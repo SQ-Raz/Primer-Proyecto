@@ -1,0 +1,946 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* cambio el color del fondo */
+
+body {
+    background: linear-gradient(to right, rgb(49, 28, 78), rgb(19, 38, 101));
+    font-family: 'Silkscreen', sans-serif;
+}
+
+/* establesco el tamaño del nav y un position fixed */
+nav {
+    height: 150px;
+    width: 100%;
+    position: fixed;
+}
+
+/* modifique el tamaño de la imagen para que se vea mejor a demas de poner bordes criculares */
+.enlace img {
+    width: 150px;
+    height: auto;
+    border-radius: 30px;
+}
+
+/* esto controla indirectamente la imagen y su padding */
+
+.enlace {
+    position: absolute;
+    padding: 30px 20px 50px 50px;
+}
+
+/* coloco los links del nav en la parte derecha */
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+/* le otrogo un display:inline-block para que se pongan uno del lado del otro */
+
+nav ul li {
+    display: inline-block;
+    line-height: 150px;
+    margin: 0 5px;
+}
+
+/* modifico el color de las letras del nav, su tamaño, su color y background, tipo de letra, y que tenga los bordes circulares */
+
+nav ul li a {
+    color: #fff;
+    font-size: 16px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    background-color: rgba(60, 125, 143, 255);
+    border-radius: 25px;
+}
+
+li a:hover {
+    background: none;
+}
+
+/* le otorgo un color al label, un tamaño, lo centro en el nav, y lo oculto con un display:none ya que solo quiero que se muestre cuando este en modo telefono */
+.check-label {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    display: none;
+}
+
+/* oculto el check ya que su unica funcion es en telefonos y no tiene que mostrarse ya que no es necesario visualmente */
+#check {
+    display: none;
+}
+
+/* solo hago que se mueva la imagen mas a la izquierda y que las letras se hagan mas pequeñas si el width baja a 952 esto pensado para las tabletas */
+
+@media (max-width: 952px) {
+    .enlace {
+        padding-left: 20px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+}
+
+/* Lo que hago en esta parte puede llegar a ser un poco más complejo, ya que juego con la posición del "ul" y así hacer ver como que no está en la página, y que solo presionando el check que está asociado a la imagen del menú con un label, aparezca de nuevo. */
+
+@media (max-width: 858px) {
+    .check-label {
+        display: block;
+        cursor: pointer;
+        /* Cambia el cursor al pasar sobre el botón */
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgb(20, 71, 87);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    li a:hover {
+        background: none;
+        color: rgb(241, 251, 255);
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    .enlace img {
+        width: 100px;
+        height: auto;
+        border-radius: 30px;
+    }
+
+    .enlace {
+        position: absolute;
+        padding: 10px 10px 10px 10px;
+    }
+}
+
+/*fin del CSS del navegador */
+/* 
+
+
+
+
+
+
+
+
+
+comiezo del index.html 
+
+
+
+
+
+
+
+
+
+*/
+
+.separador {
+    margin-top: 130px;
+    /* Ajusta el valor según la altura de tu barra de navegación */
+}
+
+/* ajusto  la imagen */
+#section-index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("../imgenes/imagenes7.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#section-index h1 {
+    color: rgb(1, 35, 61);
+    font-size: 80px;
+    margin-bottom: 25px;
+}
+
+#section-index button {
+    font-size: 50px;
+    border-radius: 25px;
+    /* Establece el radio de los bordes para que sean semi circulares */
+    background-color: #008080;
+    /* Establece el color de fondo a turquesa */
+    padding: 10px 20px;
+    /* Ajusta el espaciado interno del botón*/
+    border: none;
+    /* Elimina el borde predeterminado del botón */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    transition: all .5s;
+    font-family: 'Silkscreen', sans-serif;
+    transition: 0.5;
+    color: rgb(0, 22, 39);
+}
+
+#section-index button:hover {
+    background-color: rgb(63, 190, 178);
+    /* Cambia el color de fondo al pasar sobre el botón */
+    transition: background-color 0.5s;
+    /* Agrega una transición suave al cambio de color de fondo */
+    color: rgb(1, 35, 61);
+}
+
+@media (max-width: 858px) {
+    #section-index button {
+        font-size: 35px;
+    }
+
+    #section-index h1 {
+        font-size: 50px;
+        margin-bottom: 80px;
+    }
+}
+
+/* final del index.html */
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+comienzo del Iniciar_Sesion.HTML 
+
+
+
+
+
+
+
+
+
+
+*/
+
+/* En esta sección del CSS, estoy estilizando un formulario de inicio de sesión para lograr un diseño moderno y funcional. Aplico márgenes, centrado vertical y propiedades como cajas de sombras y degradados para mejorar la apariencia. */
+
+.separador_Secundario {
+    margin-top: 120px;
+    /* Ajusta el valor según la altura de tu barra de navegación */
+}
+
+.body-form {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    padding: 50px 55px 85px 55px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("../imgenes/imagenes8.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.div-formulario {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.h3-form {
+    color: rgb(207, 238, 251);
+    font-size: 35px;
+    margin: 0;
+}
+
+.Coloca-email {
+    font-size: 16px;
+    color: rgb(207, 238, 251);
+    margin-bottom: 20px;
+}
+
+.line {
+    display: inline-block;
+    width: 120px;
+    height: 10px;
+    background: linear-gradient(to right, rgb(5, 184, 187),
+            rgb(155, 77, 210));
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.label-form {
+    color: rgb(207, 238, 251);
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.input-form {
+    padding: 10px 8px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid rgb(55, 31, 56);
+    color: rgb(0, 0, 0);
+    outline: none;
+}
+
+.form-txt {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.form-txt a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn {
+    font-size: 16px;
+    color: #000000;
+    border-radius: 10px;
+    border: 0;
+    background: linear-gradient(to right, rgb(5, 184, 187),
+            rgb(155, 77, 210));
+
+    box-shadow: 0 0 20px rgba(155, 77, 210, 0.4);
+    cursor: pointer;
+    font-family: 'Silkscreen', sans-serif;
+}
+
+.btn:hover {
+    background: linear-gradient(to right,
+            rgb(155, 77, 210),
+            rgb(5, 184, 187));
+
+}
+
+@media (max-width: 858px) {
+    .body-form {
+        padding: 30px;
+    }
+
+    form {
+        padding: 50px 30px;
+        width: 100%;
+    }
+
+    .input-form {
+        padding: 15px 10px;
+    }
+}
+
+/* fin del inicio de secion */
+
+
+/*
+
+
+
+
+
+
+Comienzo de Creadores (esta parte que viene es un copiar y pegar del index.html
+
+
+
+
+
+
+
+
+
+*/
+
+/* esta parte es un copiar y pegar del index.html, reutize la idea y cambie algunas cosas, pero es basicamente lo mimos */
+
+#section-creadores {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 150vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("../imgenes/kadabura3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#section-creadores h1 {
+    color: rgb(255, 254, 253);
+    font-size: 80px;
+    margin-bottom: 25px;
+}
+
+#section-creadores button {
+    font-size: 50px;
+    font-family: 'Silkscreen', sans-serif;
+    border-radius: 25px;
+    /* Establece el radio de los bordes para que sean semi circulares */
+    background-color: #771c1c;
+    /* Establece el color de fondo a turquesa */
+    padding: 10px 20px;
+    /* Ajusta el espaciado interno del botón*/
+    border: none;
+    /* Elimina el borde predeterminado del botón */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    transition: all .5s;
+}
+
+#section-creadores button:hover {
+    background-color: rgb(190, 63, 63);
+    /* Cambia el color de fondo al pasar sobre el botón */
+    transition: background-color 0.5s;
+    /* Agrega una transición suave al cambio de color de fondo */
+    transition: all .5s;
+}
+
+#section-creadores button a {
+    color: rgb(236, 213, 213);
+}
+
+#section-creadores button a:hover {
+    color: rgb(0, 0, 0);
+    transition: all .5s;
+}
+
+@media (max-width: 858px) {
+    #section-creadores {
+        height: 90vh;
+    }
+
+    #section-creadores button {
+        font-size: 35px;
+    }
+
+    #section-creadores h1 {
+        font-size: 50px;
+        margin-bottom: 80px;
+    }
+}
+
+/* 
+
+
+
+
+
+
+
+
+
+
+
+Comienzo real del Creadores.html
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+/* esta parte tambie se apoya en el section del primer index donde utilizo la imagen de fondo en cada una de las cartas */
+
+
+#section2-creadores {
+    background-color: rgb(30, 30, 30);
+    text-align: center;
+}
+
+#section2-creadores .section-contenerdor {
+    padding: 150px 12px;
+}
+
+#section2-creadores h2 {
+    margin-top: 0;
+    font-size: 3.2em;
+    color: white;
+}
+
+#section2-creadores .carta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+    height: 40vh;
+    text-align: center;
+}
+
+#section2-creadores .carta h2,
+#section2-creadores .carta h3 {
+    margin-bottom: 20px;
+}
+
+#section2-creadores .carta button {
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: #008080;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all .5s;
+    font-family: 'Silkscreen', sans-serif;
+}
+
+#section2-creadores .carta button:hover {
+    background-color: rgb(63, 190, 178);
+    transition: background-color 0.5s;
+    transition: all .5s;
+}
+
+
+.carta:first-child {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("../imgenes/kadabura1.png");
+    text-align: center;
+    margin: auto;
+}
+
+.carta:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("../imgenes/kadabura5.png");
+}
+
+.carta:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("../imgenes/kadabura6.png");
+}
+
+@media (min-width: 952px) {
+    #section2-creadores .creadores {
+        display: flex;
+    }
+
+    #section2-creadores .carta {
+        width: 35%;
+        /* Ajusta el porcentaje y el margen según tus necesidades */
+        margin: 80px 30px 0px 30px;
+        box-sizing: border-box;
+        /* Asegura que el margen no aumente el ancho real */
+    }
+}
+
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+Comiezo de la parte Contactanos.HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+.separador_Contactanos {
+    margin-top: 150px;
+    height: 50vh;
+    background-image: linear-gradient(to left,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.8)), url("../imgenes/imagenes6.jpg");
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.titulo-contactanos {
+    font-size: 60px;
+    font-family: 'Silkscreen', sans-serif;
+    border-radius: 25px;
+    background-color: #008080;
+    /* Establece el color de fondo a turquesa */
+    padding: 10px 20px;
+    /* Ajusta el espaciado interno del botón*/
+    border: none;
+    /* Elimina el borde predeterminado del botón */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    transition: all .5s;
+}
+
+.titulo-contactanos a {
+    color: white;
+}
+
+.separador_Contactanos button:hover {
+    color: rgb(255, 255, 255);
+    background-color: #024d4d;
+    transition: all .5s;
+}
+
+.informacion-contacto {
+    display: flex;
+    background-color: rgb(30, 30, 30);
+    height: 70vh;
+}
+
+
+/* Ajustes en la sección de información de contacto */
+
+.informacion-contacto .contacto-cartas {
+    margin: 30px;
+    padding: 50px 20px;
+    width: 30%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.informacion-contacto>div:nth-child(1) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.6)), url("../imgenes/telefono.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.informacion-contacto>div:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.6)), url("../imgenes/mapa.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.informacion-contacto>div:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.6)), url("../imgenes/buzon.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+
+.material-symbols-outlined {
+    color: #008080;
+    font-size: 30px !important;
+}
+
+/* Espaciado entre iconos y texto */
+.material-symbols-outlined {
+    margin-bottom: 10px;
+}
+
+/* Estilo para los títulos (h3) */
+.contacto-cartas h3 {
+    color: #019797;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Estilo para los subtítulos (h4) */
+.contacto-cartas h4 {
+    color: #fff;
+    /* Cambia el color según el fondo */
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+/* Estilo para el texto de párrafo */
+.contacto-cartas p {
+    color: #f8f4f4;
+    /* Cambia el color según el fondo */
+    font-size: 10px;
+}
+
+/* Ajustes adicionales si es necesario */
+
+.contactanos-last {
+    height: 25vh;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+
+@media (max-width: 1052px) {
+    .separador_Contactanos {
+        height: 20vh;
+    }
+
+    .titulo-contactanos {
+        font-size: 30px;
+    }
+
+    .informacion-contacto {
+        display: flex;
+        flex-direction: column;
+        /* Cambia la dirección a columna */
+        background-color: rgb(30, 30, 30);
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        height: 104vb;
+    }
+
+
+    .informacion-contacto .contacto-cartas {
+        margin: 30px;
+        padding: 50px 0px;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+    }
+
+
+    .contactanos-last {
+        height: 10vh;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 858px) {
+
+    .contactanos-last {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        height: 20vh;
+        font-size: 15px;
+    }
+
+    .contacto-cartas h3 {
+        color: #019797;
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    /* Estilo para los subtítulos (h4) */
+    .contacto-cartas h4 {
+        color: #fff;
+        /* Cambia el color según el fondo */
+        font-size: 10px;
+        margin-bottom: 15px;
+        margin-top: 10px;
+    }
+
+    /* Estilo para el texto de párrafo */
+    .contacto-cartas p {
+        color: #f8f4f4;
+        /* Cambia el color según el fondo */
+        font-size: 5px;
+    }
+}
+
+/* 
+
+
+
+
+
+
+
+
+
+
+
+ultima parte Software.HTMl
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+/* aca comienzo con un nuevo diseño ya que el anterior fue copiar y pegar el codigo de Contactanos.html y modificarlo grandemente */
+
+.separador-software {
+    margin-top: 150px;
+    height: 50vh;
+    background-image: url("../imgenes/aseprite.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* Establece el ancho al 100% y ajusta la altura automáticamente. */
+    background-position: center center;
+}
+
+.aseprite-definicion {
+    text-align: center;
+    margin-top: 50px;
+    height: 40vh;
+    overflow: hidden;
+}
+
+.aseprite-definicion h2 {
+    background-color: antiquewhite;
+}
+
+.aseprite-definicion p {
+    margin: 50px 15px 0 10px;
+    color: antiquewhite;
+}
+
+.descargar {
+    display: flex;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.descargar button {
+    background-color: rgb(31, 31, 31);
+    font-size: 30px;
+    border-radius: 25px;
+    padding: 12px 9px;
+    font-family: 'Silkscreen', sans-serif;
+    transition: all .5s;
+}
+
+.descargar button a {
+    color: antiquewhite;
+}
+
+.descargar button:hover {
+    background-color: rgb(67, 66, 66);
+    transition: all .5s;
+}
+
+.video {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    display: flex;
+    height: 50vh;
+    /* Añade la propiedad overflow para manejar el tamaño del contenido */
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.video iframe {
+    /* Establece el ancho y alto al 50% para que se ajuste al tamaño de la caja contenedora */
+    width: 50%;
+    height: 100%;
+}
+
+@media (max-width: 1052px) {
+
+    .separador-software{
+        margin-top: 15px;
+    }
+
+    .video {
+        margin-top: 15px;
+    }
+
+    .video iframe {
+        /* Establece el ancho y alto al 50% para que se ajuste al tamaño de la caja contenedora */
+        width: 50%;
+        height: 80%;
+    }
+
+    .descargar button {
+        background-color: rgb(31, 31, 31);
+        font-size: 20px;
+        border-radius: 25px;
+        padding: 10px 9px;
+        font-family: 'Silkscreen', sans-serif;
+        transition: all .5s;
+    }
+
+    .descargar {
+        margin-top: 30px;
+        display: flex;
+        height: 5vh;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .aseprite-definicion {
+     display: none;
+    }
+}
